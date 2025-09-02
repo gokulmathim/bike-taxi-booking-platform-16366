@@ -28,9 +28,9 @@ urlpatterns = [
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="My API",
+      title="Bike Taxi API",
       default_version='v1',
-      description="Test description",
+      description="REST API for the Bike Taxi platform (auth, rides, payments, tracking).",
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
@@ -51,9 +51,9 @@ def dynamic_schema_view(request, *args, **kwargs):
     url = get_full_url(request)
     view = get_schema_view(
         openapi.Info(
-            title="My API",
+            title="Bike Taxi API",
             default_version='v1',
-            description="API Docs",
+            description="Interactive API Docs",
         ),
         public=True,
         url=url,
@@ -63,5 +63,5 @@ def dynamic_schema_view(request, *args, **kwargs):
 urlpatterns += [
     re_path(r'^docs/$', dynamic_schema_view, name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-    re_path(r'^swagger\.json$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    re_path(r'^openapi\.json$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
 ]

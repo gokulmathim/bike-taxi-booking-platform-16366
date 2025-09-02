@@ -1,6 +1,7 @@
 from rest_framework.test import APITestCase
 from django.urls import reverse
 
+
 class HealthTests(APITestCase):
     def test_health(self):
         url = reverse('Health')  # Make sure the URL is named
