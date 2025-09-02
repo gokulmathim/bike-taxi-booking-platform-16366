@@ -1,0 +1,4 @@
+{
+    "command": "source venv/bin/activate && python manage.py migrate && python manage.py runserver <host>:<port>",
+    "working_directory": "/home/kavia/workspace/code-generation/bike-taxi-booking-platform-16366/bike_taxi_backend"
+}
